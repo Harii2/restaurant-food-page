@@ -50,7 +50,8 @@ const Navbar = () => {
           </span>
         </div>
 
-        <div className="ml-auto">
+        <div className="ml-auto flex">
+            <input type='search' className="border-[1px] w-[400px] h-[35px] ml-2" placeholder="Search"/>
             <AiOutlineSearch size={30}/>
         </div>
         

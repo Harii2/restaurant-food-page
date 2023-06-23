@@ -66,7 +66,7 @@ const ListItems = (props) => {
                                   <p className='text-gray-500 text-md '>{each.description}</p>
                               </div>
 
-                              <p>&#8377;{each.price}</p>
+                              <p>&#8377;{each.price !== "" ? each.price : each.price_for_drinks}</p>
                         </div>
                 </div>
         </div>
@@ -78,7 +78,7 @@ const FoodItemsPage = (props) => {
 
     const [toggleOn,setToggle] = useState(false)
 
-    const {title,items} = props
+    const {title,items,url} = props
     
     
   return (

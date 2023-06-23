@@ -106,8 +106,12 @@ const Product = () => {
                     <div className='ml-5'>
                         <h1 className='font-semibold text-lg mb-4'>{item.name}</h1>
                         <p className='text-ms mb-4'>{item.description}</p>
-                        <p className='text-gray-400 font-semibold text-ms mb-4'>{`Home / Yazu Goa / ${item.type}`}</p>
-                        <p className='font-bold mb-4'>&#8377;{item.price}</p>
+                        <p className='text-gray-400 font-semibold text-ms mb-4'>{`Home / Yazu Goa / ${item.type} / ${item.category}`}</p>
+                        <span>30 ml cost is  </span>
+                        <span className='font-bold mb-4'>&#8377; {item.price !== "" ? item.price : item.price_for_drinks}</span>
+                        {
+                            item.type === "DRINKS" && (item.bottle !== "" && <p>Bootle cost is <span className='font-bold mb-4'>&#8377;{item.bottle}</span></p> )
+                        }
                     </div>
                 </div>
 

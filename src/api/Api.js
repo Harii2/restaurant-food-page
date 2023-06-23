@@ -8,7 +8,7 @@ const Mapping = (array) => {
         description:array[3],
         price:array[4],
         veg_non_veg:array[5],
-        thirtyml:array[6],
+        price_for_drinks:array[6],
         glass:array[7],
         bottle:array[8],
         Bucket_12:array[9],
@@ -29,7 +29,7 @@ export async function productsData() {
         values.forEach(element => {
             finalData.push(Mapping(element))
         });
-
+        console.log(finalData)
         return finalData
     }
     catch(e){

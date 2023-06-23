@@ -59,11 +59,12 @@ const FoodPage = () => {
       })
       
       let indicesArray = []
+      
       const groupedArray = filteredItems.reduce((accumulator, obj) => {
         const key = obj.category;
         if (!accumulator[key]) {
             indicesArray.push(key)
-            let url = "https://images.unsplash.com/photo-1578861256505-d3be7cb037d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c291cHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+            let url = currentType === "FOOD" ? "https://images.unsplash.com/photo-1578861256505-d3be7cb037d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c291cHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQop_TLin37DQosLCI6R8mmuxrOhJ-uhNCGK_wM8qvMAw&s"
   
           accumulator[key] = {id:key,items:[],url};
         }
@@ -119,7 +120,7 @@ const FoodPage = () => {
 
         </div>
                 
-             <h1 className='text-gray-500'>Choose Location</h1>
+             
             <div className='flex justify-center items-center mt-8 mb-8'>
             <div className='w-[500px] flex justify-between'>
                 
@@ -140,7 +141,7 @@ const FoodPage = () => {
                     else{
                         setGoa(false);
                         setHyd(true);
-                        setLocation("HYDERABAd")
+                        setLocation("HYDERABAD")
                     }
                     }}>
                         <input type='radio' checked = {both}/>
