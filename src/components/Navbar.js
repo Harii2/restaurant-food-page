@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const togglePanel = () => {
     setShowPanel(!showPanel);
-    console.log(showPanel)
   };
 
   const handleOutsideClick = (event) => {
@@ -25,8 +24,8 @@ const Navbar = () => {
     };
   }, []);
 
-  const body = document.querySelector('body');
-  body.style.filter = showPanel ? 'grayscale(100%)' : 'none';
+  // const body = document.querySelector('body');
+  // body.style.filter = showPanel ? 'grayscale(100%)' : 'none';
 
   return (
     <nav className="bg-white border-[1px]">

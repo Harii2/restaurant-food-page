@@ -78,7 +78,7 @@ const FoodItemsPage = (props) => {
 
     const [toggleOn,setToggle] = useState(false)
 
-    const {title,items,url} = props
+    const {title,items} = props
     
     
   return (
