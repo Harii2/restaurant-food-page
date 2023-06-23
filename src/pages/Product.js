@@ -7,12 +7,12 @@ import {BsWhatsapp} from "react-icons/bs"
 
 //image ? image : "https://images.unsplash.com/photo-1661529515642-fef696c86f64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTU5NjB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODU2MjEyNzR8&ixlib=rb-4.0.3&q=80&w=1080"
 // Fetches an image URL based on a keyword using the Unsplash API
-async function getImageUrl(keyword) {
-    const response = await fetch(`https://api.unsplash.com/photos/random?query=${keyword}&client_id=SsHvjVCXl_yngnfNaWZYADRqig59Cg7mnoTzpXd-lF4`);
-    const data = await response.json();
-    const imageUrl = data.urls.regular;
-    return imageUrl;
-  }
+// async function getImageUrl(keyword) {
+//     const response = await fetch(`https://api.unsplash.com/photos/random?query=${keyword}&client_id=SsHvjVCXl_yngnfNaWZYADRqig59Cg7mnoTzpXd-lF4`);
+//     const data = await response.json();
+//     const imageUrl = data.urls.regular;
+//     return imageUrl;
+//   }
 
 const ShareButtons = ({ shareUrl, title }) => {
     return (
@@ -94,7 +94,7 @@ const Product = () => {
         setImage(location.state.url)
         setRelated(location.state.related)
     },[location.state])
-    console.log(image)
+    
     
     return (
         <div className='flex justify-center  items-center'>
@@ -107,8 +107,11 @@ const Product = () => {
                         <h1 className='font-semibold text-lg mb-4'>{item.name}</h1>
                         <p className='text-ms mb-4'>{item.description}</p>
                         <p className='text-gray-400 font-semibold text-ms mb-4'>{`Home / Yazu Goa / ${item.type} / ${item.category}`}</p>
-                        <span>30 ml cost is  </span>
-                        <span className='font-bold mb-4'>&#8377; {item.price !== "" ? item.price : item.price_for_drinks}</span>
+                        
+                        <span className='font-bold mb-4'> {item.price && <p>&#8377; {item.price}</p>} </span>
+                        {
+                            item.price_for_drinks === "" && item.type === "DRINKS" && <p>30 ml is <span className='font-bold mb-4'>{item.price_for_drinks}</span></p>
+                        }
                         {
                             item.type === "DRINKS" && (item.bottle !== "" && <p>Bootle cost is <span className='font-bold mb-4'>&#8377;{item.bottle}</span></p> )
                         }

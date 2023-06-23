@@ -66,7 +66,7 @@ const ListItems = (props) => {
                                   <p className='text-gray-500 text-md '>{each.description}</p>
                               </div>
 
-                              <p>&#8377;{each.price !== "" ? each.price : each.price_for_drinks}</p>
+                              <p>&#8377;{each.price !== "" ? each.price : (each.price_for_drinks === "" ? each.bottle : each.price_for_drinks)}</p>
                         </div>
                 </div>
         </div>
